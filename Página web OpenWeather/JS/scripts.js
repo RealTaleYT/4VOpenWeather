@@ -84,10 +84,11 @@ jQuery(document).ready(function () {
             var lon = position.coords.longitude
             $.ajax({
                 url: `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}`,
-                dataType: 'json',
                 method: 'GET',
+                async: false,
                 success: function (data) {
                     alert(data)
+                    alert(data.list.weather)
                     if (data.length > 0) {
                         $("#tiempo").empty();
                         var tiempo = `<div class="col">
