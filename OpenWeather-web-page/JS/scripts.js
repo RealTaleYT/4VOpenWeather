@@ -60,6 +60,7 @@ jQuery(document).ready(function () {
     }
     function getTiempoUbicacion() {
         navigator.geolocation.getCurrentPosition((position) => {
+            $("#heroBody").empty()
             var key = "6bc0d1c22c462a751fe8bb9330e7bdf9"
             var lat = position.coords.latitude
             var lon = position.coords.longitude
@@ -80,7 +81,7 @@ jQuery(document).ready(function () {
                                      <div class="col-12 col-md-5 col-xl-3">
                                         <p>${weather.main}</p>
                                      </div>
-                                     </div>`                                     ;
+                                     </div>`;
                             $("#tiempo").append(tiempo);
                         });
                     } else {
@@ -92,7 +93,6 @@ jQuery(document).ready(function () {
                 }
             });
         }, function (error) {
-            // El segundo parámetro es la función de error
             switch (error.code) {
                 case error.PERMISSION_DENIED:
                     alert(error.PERMISSION_DENIED)
