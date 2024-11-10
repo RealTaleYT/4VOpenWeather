@@ -1,6 +1,0 @@
-@use 'sass:color';
-$fondoBody: #52FE91;
-$fondoObjetos: color.adjust($fondoBody, $blackness: 10%);
-$colorBtnMenu: color.adjust($fondoObjetos, $blackness: 10%);
-$colorBtnsMenu: color.adjust($fondoBody, $blackness: 40%);
-$fondoTiempo: color.adjust($fondoBody, $lightness: 20%);
