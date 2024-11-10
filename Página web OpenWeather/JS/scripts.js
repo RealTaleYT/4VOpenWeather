@@ -41,11 +41,11 @@ jQuery(document).ready(function () {
                 item = data.list[0]
                 item.weather.forEach(function (weather) {
                     var tiempo = `<div class="row">
-                            <div class="col">
+                            <div class="col-12 col-md-5 col-xl-3">
                                         <img src="http://openweathermap.org/img/wn/${weather.icon}.png" height="150" width="150" alt="icono">
                                         <p> ${weather.description}</p>
                                      </div>
-                                     <div class="col">
+                                     <div class="col-12 col-md-5 col-xl-3">
                                         <p>${weather.main}</p>
                                      </div>
                                      </div>`
@@ -73,11 +73,11 @@ jQuery(document).ready(function () {
                         item = data.list[0]
                         item.weather.forEach(function (weather) {
                             var tiempo = `<div class="row">
-                            <div class="col">
+                            <div class="col-12 col-md-5 col-xl-3">
                                         <img src="http://openweathermap.org/img/wn/${weather.icon}.png" height="150" width="150" alt="icono">
                                         <p> ${weather.description}</p>
                                      </div>
-                                     <div class="col">
+                                     <div class="col-12 col-md-5 col-xl-3">
                                         <p>${weather.main}</p>
                                      </div>
                                      </div>`                                     ;
@@ -109,4 +109,5 @@ jQuery(document).ready(function () {
             }
         })
     }
+    $("#home").click();
 })

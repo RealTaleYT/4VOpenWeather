@@ -3,33 +3,42 @@
 body {
     background-color: $fondoBody;
 }
-label{
+
+label {
     color: cyan;
 }
-h1{
+
+h1 {
     font-weight: lighter;
     color: purple;
 }
-ul{
+
+ul {
     list-style: none;
 }
+
 .navbar {
     background-color: $fondoObjetos;
 }
-.coloresbtn:hover{
+
+.coloresbtn:hover {
     background-color: $colorBtnsMenu;
 }
-.btnMenu{
+
+.btnMenu {
     background-color: $colorBtnMenu;
 }
+
 .navbarMenu {
     text-decoration: none;
     color: black;
     background-color: $fondoBody;
 }
-#heroBody{
+
+#heroBody {
     background-color: $fondoObjetos;
 }
-#tiempo{
+
+#tiempo {
     background-color: $fondoTiempo;
 }
