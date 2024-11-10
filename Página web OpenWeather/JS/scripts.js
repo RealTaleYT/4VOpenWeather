@@ -35,47 +35,28 @@ jQuery(document).ready(function () {
     })
     function getTiempoLugar(lugar) {
         var key = "6bc0d1c22c462a751fe8bb9330e7bdf9"
-        /*$.getJSON(url, function (data) {
-            if (data.length > 0) {
-                $("#tiempo").empty()
-                data.forEach(function (item) {
-                    item.weather.forEach(function (weather) {
-                        body = `<p>${weather.id}</p>
-                                `
-                    $("#tiempo").append(body)
-                    })
+        $.get(`https://api.openweathermap.org/data/2.5/forecast?q=${lugar}&limit=1&appid=${key}`, function (data) {
+            if (data.list && data.list.length > 0) {
+                $("#tiempo").empty();
+                item = data.list[0]
+                item.weather.forEach(function (weather) {
+                    var tiempo = `<div class="row">
+                            <div class="col">
+                                        <img src="http://openweathermap.org/img/wn/${weather.icon}.png" height="150" width="150" alt="icono">
+                                        <p> ${weather.description}</p>
+                                     </div>
+                                     <div class="col">
+                                        <p>${weather.main}</p>
+                                     </div>
+                                     </div>`
+                    $("#tiempo").append(tiempo);
                 });
             } else {
-                alert("No hay datos")
+                alert("No hay datos disponibles.");
             }
         }).fail(function (xhr, status, error) {
-            alert(xhr.status);
-        });*/
-        //`https://api.openweathermap.org/data/2.5/forecast?q=${lugar}&appid=${key}`
-        $.ajax({
-            url: "https://api.openweathermap.org/data/2.5/forecast?q=London&appid=6bc0d1c22c462a751fe8bb9330e7bdf9",
-            method: 'GET',
-            success: function (data) {
-                if (data.length > 0) {
-                    $("#tiempo").empty()
-                    alert(data)
-                    data.forEach(function (item) {
-                        alert(item)
-                        item.weather.forEach(function (weather) {
-                            alert(weather)
-                            body = `<p>${weather.id}</p>
-                                    `
-                            $("#tiempo").append(body)
-                        })
-                    });
-                } else {
-                    alert("No hay datos")
-                }
-            },
-            error: function (xhr, status, error) {
-                alert(xhr.status);
-            }
-        })
+            alert("Error al obtener los datos: " + xhr.status);
+        });
     }
     function getTiempoUbicacion() {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -87,18 +68,21 @@ jQuery(document).ready(function () {
                 method: 'GET',
                 async: false,
                 success: function (data) {
-                    alert(data)
-                    alert(data.list.weather)
-                    if (data.length > 0) {
+                    if (data.list && data.list.length > 0) {
                         $("#tiempo").empty();
-                        var tiempo = `<div class="col">
-                        <p>${data.list.weather.icon}</p>
-                        <p>${data.list.weather.description}</p>
-                        </div>
-                        <div class="col">
-                        <p>${data.list.weather.main}</p>
-                        </div>`
-                        $("#tiempo").append(tiempo)
+                        item = data.list[0]
+                        item.weather.forEach(function (weather) {
+                            var tiempo = `<div class="row">
+                            <div class="col">
+                                        <img src="http://openweathermap.org/img/wn/${weather.icon}.png" height="150" width="150" alt="icono">
+                                        <p> ${weather.description}</p>
+                                     </div>
+                                     <div class="col">
+                                        <p>${weather.main}</p>
+                                     </div>
+                                     </div>`                                     ;
+                            $("#tiempo").append(tiempo);
+                        });
                     } else {
                         alert("No hay datos")
                     }
