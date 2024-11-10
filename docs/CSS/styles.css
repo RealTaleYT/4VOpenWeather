@@ -1,0 +1,42 @@
+body {
+  background-color: #52FE91;
+}
+
+label {
+  color: cyan;
+}
+
+h1 {
+  font-weight: lighter;
+  color: purple;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar {
+  background-color: rgb(82, 228.5, 135.6598837209);
+}
+
+.coloresbtn:hover {
+  background-color: rgb(82, 152, 107.6395348837);
+}
+
+.btnMenu {
+  background-color: rgb(82, 203, 126.3197674419);
+}
+
+.navbarMenu {
+  text-decoration: none;
+  color: black;
+  background-color: #52FE91;
+}
+
+#heroBody {
+  background-color: rgb(82, 228.5, 135.6598837209);
+}
+
+#tiempo {
+  background-color: rgb(183.4137931034, 254.5862068966, 209.4827586207);
+}

@@ -1,0 +1,44 @@
+@import 'variables.scss';
+
+body {
+    background-color: $fondoBody;
+}
+
+label {
+    color: cyan;
+}
+
+h1 {
+    font-weight: lighter;
+    color: purple;
+}
+
+ul {
+    list-style: none;
+}
+
+.navbar {
+    background-color: $fondoObjetos;
+}
+
+.coloresbtn:hover {
+    background-color: $colorBtnsMenu;
+}
+
+.btnMenu {
+    background-color: $colorBtnMenu;
+}
+
+.navbarMenu {
+    text-decoration: none;
+    color: black;
+    background-color: $fondoBody;
+}
+
+#heroBody {
+    background-color: $fondoObjetos;
+}
+
+#tiempo {
+    background-color: $fondoTiempo;
+}
