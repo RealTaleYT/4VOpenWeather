@@ -61,6 +61,9 @@ jQuery(document).ready(function () {
     function getTiempoUbicacion() {
         navigator.geolocation.getCurrentPosition((position) => {
             $("#heroBody").empty()
+            body = `<div class="container-fluid" id="tiempo">
+                    </div>`;
+            $("#heroBody").append(body)
             var key = "6bc0d1c22c462a751fe8bb9330e7bdf9"
             var lat = position.coords.latitude
             var lon = position.coords.longitude
